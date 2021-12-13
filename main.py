@@ -51,7 +51,7 @@ exit_humid = 0
 fluid_enter = 0
 fluid_exit = 0
 while True:
-    for x in range(3):
+    for x in range(5):
         time.sleep(1)
         now = datetime.datetime.now()
         five_ft= round(((mcp_0.temperature*.668)+5.84),2)
@@ -92,19 +92,19 @@ while True:
         print("  Inlet:{} C \n  Outlet:{} C".format(water_inlet.temperature,water_outlet.temperature))
         
     #The 3 is the Number of Data point and needs to be accurate
-    five_avg=round((five/3),2)
-    six_avg=round((six/3),2)
-    seven_avg=round((seven/3),2)
-    eight_avg=round((eight/3),2)
-    nine_avg=round((nine/3),2)
-    ten_avg=round((ten/3),2)
+    five_avg=round((five/(x+1)),2)
+    six_avg=round((six/(x+1)),2)
+    seven_avg=round((seven/(x+1)),2)
+    eight_avg=round((eight/(x+1)),2)
+    nine_avg=round((nine/(x+1)),2)
+    ten_avg=round((ten/(x+1)),2)
     
-    enter_temp_avg=round((enter_temp/3),2)
-    enter_humid_avg=round((enter_humid/3),2)
-    exit_temp_avg=round((exit_temp/3),2)
-    exit_humid_avg=round((exit_humid/3),2)
-    fluid_enter_avg=round((fluid_enter/3),2)
-    fluid_exit_avg=round((fluid_exit/3),2)
+    enter_temp_avg=round((enter_temp/(x+1)),2)
+    enter_humid_avg=round((enter_humid/(x+1)),2)
+    exit_temp_avg=round((exit_temp/(x+1)),2)
+    exit_humid_avg=round((exit_humid/(x+1)),2)
+    fluid_enter_avg=round((fluid_enter/(x+1)),2)
+    fluid_exit_avg=round((fluid_exit/(x+1)),2)
     
         #Below Ground
     def thingspeak():
@@ -131,5 +131,13 @@ while True:
         new_URL=URL+KEY+HEADER
         v=urllib.request.urlopen(new_URL)
         print(v)
+        print("Average Data has been sent\n",(x+1)," Runs Were Averaged")
+        print("For Reference The Five Foot Average was: ", five_avg)
     if __name__== '__main__':
         thingspeak()
+    five = 0
+    six = 0
+    seven = 0 
+    eight = 0
+    nine = 0
+    ten = 0
