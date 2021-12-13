@@ -51,8 +51,8 @@ exit_humid = 0
 fluid_enter = 0
 fluid_exit = 0
 while True:
-    for x in range(5):
-        time.sleep(1)
+    for x in range(59):
+        time.sleep(60)
         now = datetime.datetime.now()
         five_ft= round(((mcp_0.temperature*.668)+5.84),2)
         six_ft= round(((mcp_2.temperature*.666)+6.666),2)
