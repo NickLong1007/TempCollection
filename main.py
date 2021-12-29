@@ -90,7 +90,7 @@ while True:
         print("  Humidity: %0.1f %%" % air_outlet.relative_humidity)
         print("")
         print("Inlet and Outlet Water Temperature:")
-        print("  Inlet:{} C \n  Outlet:{} C".format(water_inlet.temperature,water_outlet.temperature))
+        print("  Inlet:{} C \n  Outlet:{} C".format(water_inlet.temperature,round((water_outlet.temperature),2)))
         
     #The 3 is the Number of Data point and needs to be accurate
     five_avg=round((five/(x+1)),2)
