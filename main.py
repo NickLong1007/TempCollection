@@ -6,6 +6,7 @@ import datetime
 import adafruit_ahtx0
 import digitalio
 import adafruit_max31855
+import adafruit_max31856
 import random
 import urllib.request
 import requests
@@ -21,7 +22,7 @@ water_inlet = adafruit_max31855.MAX31855(spi, cs_inlet)
 
 #Water Outlet Temperature
 cs_outlet = digitalio.DigitalInOut(board.D6)
-water_outlet = adafruit_max31855.MAX31855(spi, cs_outlet)
+water_outlet = adafruit_max31856.MAX31856(spi, cs_outlet)
 
 #Temperature and Humidity Sensor 
 air_inlet = adafruit_ahtx0.AHTx0(i2c,address= 0X38)
@@ -51,8 +52,8 @@ exit_humid = 0
 fluid_enter = 0
 fluid_exit = 0
 while True:
-    for x in range(13):
-        time.sleep(10)
+    for x in range(60):
+        time.sleep(59)
         now = datetime.datetime.now()
         five_ft= round(((mcp_0.temperature*.668)+5.84),2)
         six_ft= round(((mcp_2.temperature*.666)+6.666),2)
