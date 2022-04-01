@@ -111,7 +111,7 @@ while True:
     def thingspeak():
         #timerbelow is how often to upload in seconds
         URL='https://api.thingspeak.com/update?api_key='
-        KEY='KY192MJQ1J9101BS'
+        KEY=''
         #field 1 and 2 are created on thing speak and the values come
         #from val 1 and val 2
         HEADER='&field1={}&field2={}&field3={}&field4={}&field5={}&field6={}'.format(five_avg,six_avg,seven_avg,eight_avg,nine_avg,ten_avg)
@@ -125,7 +125,7 @@ while True:
     def thingspeak():
         #timerbelow is how often to upload in seconds
         URL='https://api.thingspeak.com/update?api_key='
-        KEY='V1KQU9V58WSZ8WKZ'
+        KEY=''
         #field 1 and 2 are created on thing speak and the values come
         #from val 1 and val 2
         HEADER='&field1={}&field2={}&field3={}&field4={}&field5={}&field6={}'.format(enter_temp_avg,enter_humid_avg,exit_temp_avg,exit_humid_avg,fluid_enter_avg,fluid_exit_avg)
